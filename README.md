@@ -10,9 +10,9 @@
 | 2026-09 | 沪深300月度回顾 | [阅读](./2026-09-csi300/README.md) | [Notebook](./2026-09-csi300/csi300-sep-review.ipynb) |
 
 ## 工具
-- Python, pandas, numpy, matplotlib
+- Python, pandas, numpy, matplotlib, seaborn
 - Jupyter Notebook
-- 数据来源：akshare / tushare / yfinance
+- 数据来源：akshare / baostock
 
 ## 免责声明
 仅供个人学习记录，不构成投资建议。# finance-data-nontes
