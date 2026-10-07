@@ -7,7 +7,7 @@
 
 | 月份 | 主题 | 报告 | 代码 |
 |---|---|---|---|
-| 2026-09 | 沪深300月度回顾 | [阅读](./2026-09-csi300/README.md) | [Notebook](./2026-09-csi300/csi300-sep-review.ipynb) |
+| 2026-09 | 沪深300月度回顾 | [阅读](./2026-09-csi300/README.md) | [Notebook](./2026-09-csi300/hs300_202609_report.ipynb) |
 
 ## 工具
 - Python, pandas, numpy, matplotlib, seaborn
