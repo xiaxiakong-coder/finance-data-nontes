@@ -8,6 +8,7 @@
 | 月份 | 主题 | 报告 | 代码 |
 |---|---|---|---|
 | 2026-09 | 沪深300月度回顾 | [阅读](./2026-09-csi300/README.md) | [Notebook](./2026-09-csi300/hs300_202609_report.ipynb) |
+| 2026-10 | 申万行业月度涨跌预测：简单量化模型与滚动验证 | [阅读](./2026-10-sw1st/README.md) | [Notebook](./2026-10-sw1st/analysis.ipynb) |
 
 ## 工具
 - Python, pandas, numpy, matplotlib, seaborn, scikit-learn
