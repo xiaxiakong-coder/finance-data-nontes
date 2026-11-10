@@ -115,6 +115,7 @@ def train_test(start_month, end_month):
         low_i = i[:10]
         diff = ytest[high_i].mean()-ytest[low_i].mean()
         return diff
+```
 *完整代码、数据清洗过程与逐月结果见 analysis.ipynb。
 
 ### 5.报告结果
