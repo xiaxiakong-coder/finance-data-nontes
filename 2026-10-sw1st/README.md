@@ -84,9 +84,10 @@
 - 每个测试月，按概率排序，取**前10个为高分组，后10个为低分组**。计算高分组下月平均收益率，计算低分组下月平均收益率，计算收益差
 - 一共训练并测试33次，看收益差为正的次数为多少，如果<17次，说明模型可信度较低，如果>25次，说明模型有一定参考价值
 
+```python
+def train_test(start_month, end_month):
 
-  def train_test(start_month, end_month):
-        Xtrain = features_data[
+    Xtrain = features_data[
             (features_data['month']>(pd.Period(start_month)-1)) & 
             (features_data['month']<pd.Period(end_month))
              ][['vol_1m', 'skew_1m', 'ret_1m', 'amt_chg', 'ret_lag1', 'corr_hs300']].copy().reset_index(drop=True)
