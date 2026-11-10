@@ -84,14 +84,14 @@
 - 每个测试月，按概率排序，取**前10个为高分组，后10个为低分组**。计算高分组下月平均收益率，计算低分组下月平均收益率，计算收益差
 - 一共训练并测试33次，看收益差为正的次数为多少，如果<17次，说明模型可信度较低，如果>25次，说明模型有一定参考价值
 
-    def train_test(start_month, end_month):
-    
-        Xtrain_1st = features_data[
+
+  def train_test(start_month, end_month):
+        Xtrain = features_data[
             (features_data['month']>(pd.Period(start_month)-1)) & 
             (features_data['month']<pd.Period(end_month))
              ][['vol_1m', 'skew_1m', 'ret_1m', 'amt_chg', 'ret_lag1', 'corr_hs300']].copy().reset_index(drop=True)
     
-        ytrain_1st = features_data[
+        ytrain = features_data[
             (features_data['month']>pd.Period(start_month)-1) & 
             (features_data['month']<pd.Period(end_month))
              ]['label_next_month'].copy().reset_index(drop=True)
@@ -99,20 +99,20 @@
         model = GaussianNB()
         model.fit(Xtrain_1st, ytrain_1st)
     
-        Xtest_1st = features_data[
+        Xtest = features_data[
             (features_data['month']==pd.Period(end_month)) 
              ][['vol_1m', 'skew_1m', 'ret_1m', 'amt_chg', 'ret_lag1', 'corr_hs300']].copy().reset_index(drop=True)
     
-        ytest_1st = features_data[
+        ytest = features_data[
             features_data['month']==pd.Period(end_month)
              ]['ret_next_month'].copy().reset_index(drop=True)
     
-        proba = model.predict_proba(Xtest_1st)[:,1]
+        proba = model.predict_proba(Xtest)[:,1]
     
         i = np.argsort(proba)
         high_i = i[-10:]
         low_i = i[:10]
-        diff = ytest_1st[high_i].mean()-ytest_1st[low_i].mean()
+        diff = ytest[high_i].mean()-ytest[low_i].mean()
         return diff
 *完整代码、数据清洗过程与逐月结果见 analysis.ipynb。
 
